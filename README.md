@@ -2,6 +2,10 @@
 # stemlings
 *gamifying K-12 STEM education using AI*
 
+🔗 [stemlings.tech](https://stemlings.vercel.app)
+
+👋 [stemlings presentation](https://docs.google.com/presentation/d/1F7KNb0-LnIew-guU4TuFYOXxufhDWJV5fVA0J-9rc8U/edit?usp=sharing)
+
 ---
 
 ## 💡 Inspiration
