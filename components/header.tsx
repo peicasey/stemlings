@@ -5,7 +5,7 @@ import { atkins } from '../styles/fonts';
 
 export default function Header() {
   return (
-    <header className="py-4 px-12 bg-[#161632]">
+    <header className="z-100 py-4 px-12 bg-[#161632]">
       <div className="flex gap-2 items-center justify-between">
         <Image
           src="/stemlings_logo.png"
@@ -15,10 +15,10 @@ export default function Header() {
         />
         <nav className="flex space-x-4">
           <Link className={atkins.className} href="/">
-            <p className="hover:text-[#60c8fb] hover:translate-y-[-1px] duration-200">home</p>
+            <p className="z-[1] hover:text-[#60c8fb] hover:translate-y-[-1px] duration-200">home</p>
           </Link>
           <Link className={atkins.className} href="/onboarding">
-            <p className="hover:text-[#fa9c9c] hover:translate-y-[-1px] duration-200">login</p>
+            <p className="z-[1] hover:text-[#fa9c9c] hover:translate-y-[-1px] duration-200">login</p>
           </Link>
         </nav>
       </div>

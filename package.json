@@ -11,6 +11,7 @@
     "@splinetool/runtime": "^1.0.38",
     "@tailwindcss/typography": "^0.5.7",
     "date-fns": "^2.29.3",
+    "dotenv": "^16.4.1",
     "gray-matter": "4.0.3",
     "ioredis": "^5.2.4",
     "nanoid": "^4.0.0",
@@ -21,7 +22,8 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "styled-components": "^6.1.8",
-    "swr": "^2.0.0"
+    "swr": "^2.0.0",
+    "typeit-react": "^2.7.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.5",
