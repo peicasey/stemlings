@@ -15,10 +15,10 @@ export default function Header() {
         />
         <nav className="flex space-x-4">
           <Link className={atkins.className} href="/">
-            <p className="z-[1] hover:text-[#60c8fb] hover:translate-y-[-1px] duration-200">home</p>
+            <p className="z-[1] hover:text-[#60c8fb] hover:translate-y-[-1px] duration-200">landing</p>
           </Link>
-          <Link className={atkins.className} href="/onboarding">
-            <p className="z-[1] hover:text-[#fa9c9c] hover:translate-y-[-1px] duration-200">login</p>
+          <Link className={atkins.className} href="/home">
+            <p className="z-[1] hover:text-[#fa9c9c] hover:translate-y-[-1px] duration-200">home</p>
           </Link>
         </nav>
       </div>

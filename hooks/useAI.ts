@@ -28,7 +28,7 @@ export default function useComments() {
       {
         role: "user",
         content:
-          text,
+          "help me god",
       },
     ]
 
