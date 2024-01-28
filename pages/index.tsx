@@ -91,9 +91,11 @@ function HomePage() {
         </div>
 
         <div className="flex flex-col gap-4 m-[60px] z-[1]">
-          <Button text="get started" link='/onboarding'></Button>
+          <Button text="get started" link='/ai'></Button>
         </div>
 
+
+        
         <div className="flex">
           <div className="translate-y-8">
             <Image
@@ -104,11 +106,11 @@ function HomePage() {
             />
           </div>
         </div>
-        <div className="absolute translate-y-[220px] z-0">
+        <div className="absolute w-[1200px] translate-y-[40%]">
           <Wrapper>
             {/* <Suspense fallback={<div>Loading...</div>}> */}
               <Spline
-                className="spline" 
+                className="spline overflow-hidden" 
                 scene="https://prod.spline.design/CiWvMkFpLyYLJOAE/scene.splinecode"
               />
             {/* </Suspense> */}

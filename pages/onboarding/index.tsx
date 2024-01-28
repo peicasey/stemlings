@@ -21,7 +21,9 @@ function Onboarding() {
                 className="absolute translate-y-[-10vh] translate-x-[-15%]" 
                 scene="https://prod.spline.design/3nxoLS14X7pfEWJg/scene.splinecode"
             />
-            <div className="w-[25%]"></div>
+            <div className="bg-[#6467a0] rounded-[15%] w-[20%]"></div>
+
+            <div className="w-[5%]"></div>
 
             <OnboardingInfo text={"howdy owo"} which={1} />            
             
