@@ -1,13 +1,38 @@
 import Container from "../components/container";
 import Image from "next/image";
+import styled from "styled-components";
 
 import Button from "../components/button";
 
+// import { Application } from '@splinetool/runtime';
+
+// const canvas = document.getElementById('canvas3d');
+// const app = new Application(canvas);
+// app.load('https://prod.spline.design/3nxoLS14X7pfEWJg/scene.splinecode');
+
+
+
 import { jost, atkins, poppins } from '../styles/fonts';
+
+
+import React, { Suspense } from 'react';
+
+import Spline from "@splinetool/react-spline";
 
 const greeting = 'stemlings'
 const stars1 = '⋆ ｡° ✩'
 const stars2 = '⋆ ｡✩ ° .'
+
+
+const Wrapper = styled.div`
+  .spline {
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
+`
 
 
 function HomePage() {
@@ -31,10 +56,11 @@ function HomePage() {
   }
 
   
+  
 
   return (
     <>
-      <div className="h-[60vh] w-[100vw] flex flex-col items-center gap-6">
+      <div className="h-[80vh] w-[100vw] flex flex-col items-center gap-6">
         <div className="w-[100vw] text-center flex flex-col items-center justify-center gap-2">
           <span aria-hidden="true" className="wave">
             {star1Stars.map((letter, index) => (<span key={index}>{letter}</span>))}
@@ -69,9 +95,23 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 m-[60px]">
+        <div className="flex flex-col gap-4 m-[60px] z-[1]">
           <Button text="get started" link='/onboarding'></Button>
         </div>
+
+        <div className="absolute translate-y-[220px] z-0">
+          <Wrapper>
+            {/* <Suspense fallback={<div>Loading...</div>}> */}
+              <Spline
+                className="spline" 
+                scene="https://prod.spline.design/CiWvMkFpLyYLJOAE/scene.splinecode"
+              />
+            {/* </Suspense> */}
+          </Wrapper>
+          
+        </div>
+
+        
 
       </div>
     </>

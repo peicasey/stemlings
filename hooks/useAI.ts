@@ -2,7 +2,7 @@ async function run(model, input) {
     const response = await fetch(
       `https://api.cloudflare.com/client/v4/accounts/a4630d62a43d4f9b5c8a7b5861b8ef0b/ai/run/${model}`,
       {
-        headers: { Authorization: "Bearer {API_TOKEN}" },
+        headers: { Authorization: "Bearer {AI_API_TOKEN}" },
         method: "POST",
         body: JSON.stringify(input),
       }
