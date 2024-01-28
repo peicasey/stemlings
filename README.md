@@ -1,6 +1,6 @@
 ![Image Stemlings Banner](https://i.ibb.co/N3tzF7r/stemlings-banner.png)
 # stemlings
-> gamifying K-12 STEM education using AI
+*gamifying K-12 STEM education using AI*
 
 ---
 
