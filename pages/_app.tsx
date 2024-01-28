@@ -11,14 +11,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
     >
-      <Head>
+      {/* <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Clone and deploy your own Next.js portfolio in minutes."
         />
         <title>My awesome blog</title>
-      </Head>
+      </Head> */}
 
       <Header />
 
