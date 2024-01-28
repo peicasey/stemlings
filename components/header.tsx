@@ -1,15 +1,27 @@
 import Link from "next/link";
-import Container from "../components/container";
+import Image from "next/image";
+
+import { atkins } from '../styles/fonts';
 
 export default function Header() {
   return (
-    <header className="py-6">
-      <Container>
+    <header className="py-4 px-12 bg-[#161632]">
+      <div className="flex gap-2 items-center justify-between">
+        <Image
+          src="/stemlings_logo.png"
+          alt="my desk"
+          width={40}
+          height={40}
+        />
         <nav className="flex space-x-4">
-          <Link href="/">About</Link>
-          <Link href="/posts">Posts</Link>
+          <Link className={atkins.className} href="/">
+            <p className="hover:text-[#60c8fb] hover:translate-y-[-1px] duration-200">home</p>
+          </Link>
+          <Link className={atkins.className} href="/onboarding">
+            <p className="hover:text-[#fa9c9c] hover:translate-y-[-1px] duration-200">login</p>
+          </Link>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }

@@ -3,7 +3,12 @@ import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Header from "../components/header";
+import Footer from "../components/footer";
+
 import { Auth0Provider } from "@auth0/auth0-react";
+
+import '../styles/globals.css'
+import { inter, lora, poppins, atkins, jost } from '../styles/fonts';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,16 +20,21 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Clone and deploy your own Next.js portfolio in minutes."
+          content="Grow your own stemlings."
         />
-        <title>My awesome blog</title>
+        <title>Stemlings</title>
       </Head>
 
       <Header />
 
-      <main className="py-14">
-        <Component {...pageProps} />
+      <main className="py-20">
+        <div className={atkins.className}>
+          <Component {...pageProps} />
+        </div>
       </main>
+
+      <Footer />
+
     </Auth0Provider>
   );
 }
