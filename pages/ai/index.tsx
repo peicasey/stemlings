@@ -39,12 +39,40 @@ const MESSAGE = [
       {
         role: "user",
         content:
-          "",
+          "tell me a joke you stupid bitch",
       },
     ]
 
+const headers = {
+  'Content-Type': "application/json",
+  'X-Auth-Email': "peicasey@gmail.com",
+  'X-Auth-Key': "5f1269cf6f67aff9b77bd0b9fee01856d1a46",
+  'Access-Control-Allow-Origin' : '*',
+  }
+    
+
+
 function AIPage(params: AIPageProps) {
-  const { text, setText, onSubmit } = useAI();
+  const [ text, setText ] = useState('default text');
+
+  const sendMessage = async () => {
+    await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/a4630d62a43d4f9b5c8a7b5861b8ef0b/ai/run/@cf/meta/llama-2-7b-chat-int8`,
+      {
+        headers: headers,
+        method: "POST",
+        body: JSON.stringify(MESSAGE),
+      }
+    ).then((response) => response.json())
+    .then((data) => {
+      setText(data);
+      return JSON.stringify(data);
+    })
+    .catch((err) => {
+       console.log(err.message);
+    })
+  };
+
 
   return (
     <>
@@ -97,12 +125,16 @@ function AIPage(params: AIPageProps) {
               <p className={atkins.className}>me 👤</p>
             </div>
               
-            <AIForm onSubmit={onSubmit} text={text} setText={setText} />
+            {/* <AIForm onSubmit={onSubmit} text={text} setText={setText} /> */}
             
           </div>
         </div>
-
-        <button onClick={ testRun }>X owo</button>
+        
+        <div className="">
+          <div>m {text} m</div>
+          <button onClick={ sendMessage }>X owo</button>
+        </div>
+        
 
       </div>
     </>
