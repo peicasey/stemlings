@@ -1,7 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
-
+import AIForm from "../../components/message";
 import Button from "../../components/button";
+import useAI from "../../hooks/useAI";
+import testRun from "../../hooks/bro";
 
 import { atkins, poppins } from '../../styles/fonts';
 
@@ -17,13 +19,6 @@ type AIPageProps = {
   onSubmit: (e: React.FormEvent) => Promise<void>;
 };
 
-// export default function CommentForm({
-//   text,
-//   setText,
-//   onSubmit,
-// }: CommentFormProps) {
-//   const { isAuthenticated, logout, loginWithPopup } = useAuth0();
-
 const Wrapper = styled.div`
   .spline {
     margin: 0;
@@ -36,7 +31,20 @@ const Wrapper = styled.div`
 
 const SPEED = 30;
 
+const MESSAGE = [
+      {
+        role: "system",
+        content: "You are a friendly tutor that helps kids learn STEM topics",
+      },
+      {
+        role: "user",
+        content:
+          "",
+      },
+    ]
+
 function AIPage(params: AIPageProps) {
+  const { text, setText, onSubmit } = useAI();
 
   return (
     <>
@@ -61,7 +69,7 @@ function AIPage(params: AIPageProps) {
             <div className={"p-4 min-h-[200px] bg-[#0e0f1f] "+
               "rounded-xl border-2 border-[#60c8fb]"
             }>
-              <div className={atkins.className}>
+              <div className={atkins.className} >
                 <TypeIt className=""
                     options={{
                     loop: false,
@@ -87,40 +95,14 @@ function AIPage(params: AIPageProps) {
           <div className="flex flex-col">
             <div className="mb-2 text-[#60c8fb] font-bold">
               <p className={atkins.className}>me 👤</p>
-              </div>
-              <div className={" bg-[#0e0f1f] "+
-                "rounded-xl border-2 border-[#60c8fb]"
-              }>
-                <div className={atkins.className}>
-                  
-                  <form >
-                    <textarea
-                      className={"w-full min-h-[200px] max-h-40 p-3 rounded resize-y" + 
-                      "bg-[#0e0f1f] text-white placeholder-gray-500"+
-                      "!border-0 border-blue-gray-200 border-transparent bg-transparent" +
-                      " px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 " +
-                      " outline outline-0 transition-all placeholder:text-blue-gray-300 " + 
-                      "placeholder-shown:border placeholder-shown:border-blue-gray-200 " + 
-                      "placeholder-shown:border-t-blue-gray-200 focus:border-2 " +
-                      " border-transparent " + 
-                      " outline-0 disabled:resize-none " + 
-                      " disabled:border-0 disabled:bg-blue-gray-50" }
-                      rows={2}
-                      placeholder={"Answer your stemling :D"}
-                      // onChange={(e) => setText(e.target.value)}
-                      value={params.text}
-                      disabled={false}
-                    />
-                  </form>
-                </div>
             </div>
-
-            <div className="flex mt-4 w-[100%] justify-end">
-              <Button text="submit" link="/"></Button>
-            </div>
+              
+            <AIForm onSubmit={onSubmit} text={text} setText={setText} />
             
           </div>
         </div>
+
+        <button onClick={ testRun }>X owo</button>
 
       </div>
     </>
