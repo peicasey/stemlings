@@ -1,3 +1,5 @@
+![Image Stemlings Banner](https://i.ibb.co/N3tzF7r/stemlings-banner.png)
+
 ## 💡 Inspiration
 > Our inspiration for *stemlings* was the desire to create a fun service that encourages K-12 students to cultivate an interest in STEM and to encourage them to come back each day to prepare for it.
 
