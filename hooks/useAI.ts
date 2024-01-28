@@ -16,12 +16,12 @@ async function run(model, input) {
     messages: [
       {
         role: "system",
-        content: "You are a friendly assistant that helps write stories",
+        content: "You are a friendly tutor assistant that teaches kids STEM topics",
       },
       {
         role: "user",
         content:
-          "Write a short story about a llama that goes on a journey to find an orange cloud",
+          "Give a math practice problem and solution for a kid that is 8 years old",
       },
     ],
   }).then((response) => {

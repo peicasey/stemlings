@@ -1,8 +1,14 @@
-import Container from "../components/container";
 import Image from "next/image";
 import styled from "styled-components";
 
 import Button from "../components/button";
+
+import { atkins, poppins } from '../styles/fonts';
+
+import React from 'react';
+
+import Spline from "@splinetool/react-spline";
+
 
 // import { Application } from '@splinetool/runtime';
 
@@ -10,14 +16,6 @@ import Button from "../components/button";
 // const app = new Application(canvas);
 // app.load('https://prod.spline.design/3nxoLS14X7pfEWJg/scene.splinecode');
 
-
-
-import { jost, atkins, poppins } from '../styles/fonts';
-
-
-import React, { Suspense } from 'react';
-
-import Spline from "@splinetool/react-spline";
 
 const greeting = 'stemlings'
 const stars1 = '⋆ ｡° ✩'
@@ -54,9 +52,6 @@ function HomePage() {
     const char = stars2[i]
     star2Stars.push(char == ' ' ? '\u00A0' : char)
   }
-
-  
-  
 
   return (
     <>
@@ -99,6 +94,16 @@ function HomePage() {
           <Button text="get started" link='/onboarding'></Button>
         </div>
 
+        <div className="flex">
+          <div className="translate-y-8">
+            <Image
+              src="/just_some_bros.png"
+              alt="a crowd of stemlings"
+              width={800}
+              height={200}
+            />
+          </div>
+        </div>
         <div className="absolute translate-y-[220px] z-0">
           <Wrapper>
             {/* <Suspense fallback={<div>Loading...</div>}> */}
@@ -108,8 +113,8 @@ function HomePage() {
               />
             {/* </Suspense> */}
           </Wrapper>
-          
         </div>
+
 
         
 
